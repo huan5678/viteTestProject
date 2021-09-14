@@ -15,6 +15,7 @@ const pages = {
 }
 
 export default defineConfig({
+  publicPath: './',
   model: modeEnv,
   hmr: { overlay: false },
   plugins: [
