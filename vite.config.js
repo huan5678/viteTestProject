@@ -2,17 +2,16 @@ import mpa from 'vite-plugin-mpa'
 import htmlTemplate from 'vite-plugin-html-template'
 
 //'development'，'production'
-const modeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'development'
-
+const modeEnv =
+  process.env.NODE_ENV === 'production' ? 'production' : 'development'
 
 const { resolve } = require('path')
 const { defineConfig } = require('vite')
 const virtualHtml = require('vite-plugin-virtual-html')
 
-
 const pages = {
-    index: '/src/index.html',
-    login: '/src/login.html',
+  index: '/src/index.html',
+  login: '/src/login.html',
 }
 
 export default defineConfig({
@@ -39,9 +38,11 @@ export default defineConfig({
         title: 'Home Page',
       },
     }),
-    [virtualHtml({
-      pages,
-      indexPage: 'login'
-      })],
-  ]
+    [
+      virtualHtml({
+        pages,
+        indexPage: 'login',
+      }),
+    ],
+  ],
 })
